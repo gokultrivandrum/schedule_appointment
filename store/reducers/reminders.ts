@@ -1,4 +1,5 @@
 import * as actionTypes from "../actions/actionTypes";
+// @ts-ignore
 import uniqueId from "uuid/v1";
 
 const initialState = {};

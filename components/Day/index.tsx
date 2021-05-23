@@ -24,6 +24,7 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
 
   useEffect(() => {
     setEditReminder({
+      _id: null,
       id: null,
       time: null,
       description: null,
@@ -62,6 +63,7 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
       };
       if (update.id) {
         payload["id"] = update.id;
+        payload["_id"] = update._id;
         updateReminder(payload);
       } else {
         createReminder(payload);

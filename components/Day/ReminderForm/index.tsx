@@ -1,5 +1,6 @@
 import React from "react";
 import TimePicker from "rc-time-picker";
+// @ts-ignore
 import ColorPicker from "rc-color-picker";
 import moment from "moment";
 import styles from "./ReminderForm.module.css";

@@ -55,13 +55,13 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
     let payload: any = {};
     const form = e.target;
     const description = form.querySelector(".description")?.value.trim();
-
+    const editReminderColor:any = editReminder;
     if (description?.length) {
       payload = {
         date: date,
         time: form.querySelector(".rc-time-picker-input")?.value,
         description: description,
-        color: editReminder.color || defaultColor
+        color:  editReminderColor.color || defaultColor
       };
       if (update.id) {
         payload["id"] = update.id;

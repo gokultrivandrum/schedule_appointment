@@ -5,6 +5,7 @@ import ReminderForm from "./ReminderForm";
 import Reminder from "./Reminder";
 import _sortBy from "lodash/sortBy";
 import styles from "./day.module.css";
+import { toast } from 'react-toastify';
 
 const defaultColor = "#000";
 type Props = {
@@ -26,6 +27,7 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
     setEditReminder({
       _id: null,
       id: null,
+      date: date,
       time: null,
       description: null,
       color: defaultColor
@@ -66,7 +68,22 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
         payload["_id"] = update._id;
         updateReminder(payload);
       } else {
-        createReminder(payload);
+        const reminderFiltered = (remindersProp[date]) ? remindersProp[date].filter((reminder: any) => {
+          return reminder.date === date && reminder.time === payload.time;
+        }) : [];
+        if (reminderFiltered.length > 0) {
+          toast.warn('Please choose someother slot', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 1,
+          });
+        } else {
+          createReminder(payload);
+        }
       }
 
       handleSetEditDay(null);

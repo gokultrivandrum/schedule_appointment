@@ -1,0 +1,52 @@
+.day {
+  position: relative;
+  flex: 1 0 14.28%;
+  max-width: calc(100% / 7);
+  min-height: 130px;
+  padding: 10px;
+  box-shadow: inset 0 1px 1px #000;
+}
+.day:hover .btnNewReminder {
+  opacity: 1;
+}
+.firstIndex1 {
+  margin-left: 14.28%;
+}
+.firstIndex2 {
+  margin-left: 28.56%;
+}
+.firstIndex3 {
+  margin-left: 42.84%;
+}
+.firstIndex4 {
+  margin-left: 57.12%;
+}
+.firstIndex5 {
+  margin-left: 71.4%;
+}
+.firstIndex6 {
+  margin-left: 85.68%;
+}
+.firstIndex7 {
+  margin-left: 99.96%;
+}
+.day .header {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.day .btnNewReminder {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  opacity: 0;
+  transition: opacity 500ms;
+  z-index: 1;
+}
+.day .btnNewReminder .fas {
+  font-size: 38px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.day .btnNewReminder .fas:hover {
+  color: #000;
+}

@@ -1,0 +1,55 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:600";
+@import "https://use.fontawesome.com/releases/v5.2.0/css/all.css";
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: normal 16px "Montserrat", sans-serif;
+  padding: 15px;
+  background: linear-gradient(
+      to right top,
+      #051937,
+      #004d7a,
+      #008793,
+      #00bf72,
+      #a8eb12
+    )
+    no-repeat;
+  background-attachment: fixed;
+}
+
+button {
+  background: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.firstIndex1 {
+  margin-left: 14.28%;
+}
+.firstIndex2 {
+  margin-left: 28.56%;
+}
+.firstIndex3 {
+  margin-left: 42.84%;
+}
+.firstIndex4 {
+  margin-left: 57.12%;
+}
+.firstIndex5 {
+  margin-left: 71.4%;
+}
+.firstIndex6 {
+  margin-left: 85.68%;
+}
+.firstIndex7 {
+  margin-left: 99.96%;
+}

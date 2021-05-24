@@ -28,7 +28,7 @@ const reminderForm = ({ reminder, handleCreateUpdateReminder, handleSetEditDay, 
     >
       <textarea
         className={textareaCSS}
-        placeholder="Reminder"
+        placeholder="Appointment"
         maxLength={maxLength}
         defaultValue={reminder.description}
       />

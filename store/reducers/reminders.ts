@@ -10,7 +10,6 @@ const initialState = {};
 const createReminder = (prevState: any, action: any) => {
   const reminder = {
     id: uniqueId(),
-    _id: uniqueId(),
     date: action.reminder.date,
     time: action.reminder.time,
     description: action.reminder.description,
@@ -54,7 +53,6 @@ const updateReminder = (prevState: any, action: any) => {
     if (action.reminder.id === reminder.id) {
       reminder = {
         id: reminder.id,
-        _id: reminder.id,
         date: action.reminder.date,
         time: action.reminder.time,
         description: action.reminder.description,
@@ -70,7 +68,7 @@ const updateReminder = (prevState: any, action: any) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedReminder)
   };
-  fetch(`${API_URL}/${updatedReminder._id}`, requestOptions)
+  fetch(`${API_URL}/${updatedReminder.id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();

@@ -41,7 +41,7 @@ const Month = ({ setReminderArrayStore }: Props) => {
       let date = `${curMonth.date}-${("0" + i).slice(-2)}`; // Add leading zeros
       props["date"] = date;
       props["day"] = i;
-
+      props['enable'] = (moment().diff(date, 'days') <= 0) ? true : false;
       if (i === 1) {
         props["firstDayIndex"] = moment(date)
           .startOf("month")

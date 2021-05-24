@@ -17,9 +17,10 @@ type Props = {
   day?: any,
   deleteReminder?: any,
   updateReminder?: any,
-  createReminder?: any
+  createReminder?: any,
+  enable?:any
 }
-const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, day, deleteReminder, updateReminder, createReminder }: Props) => {
+const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, day, deleteReminder, updateReminder, createReminder, enable}: Props) => {
 
   const [editReminder, setEditReminder] = useState({});
 
@@ -104,7 +105,7 @@ const Day = ({ remindersProp, date, firstDayIndex, editDay, handleSetEditDay, da
 
   return (
     <article className={cssClasses}>
-      {!editDay && (
+      {!editDay && enable && (
         <button
           className={styles.btnNewReminder}
           onClick={() => handleSetEditDay(day)}

@@ -9,6 +9,9 @@ import { useRouter } from 'next/router'
 import { connect } from "react-redux";
 import * as actions from "../../store/actions";
 import { uniqBy } from 'lodash';
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig();
+const {API_URL} = publicRuntimeConfig;
 
 type Props = {
   setReminderArrayStore?: any
@@ -60,7 +63,8 @@ const Month = ({ setReminderArrayStore }: Props) => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       };
-      fetch('https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/', requestOptions)
+      
+      fetch(API_URL, requestOptions)
         .then(async (response: any) => {
           const isJson = response.headers.get('content-type').includes('application/json');
           const data = isJson && await response.json();

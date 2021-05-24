@@ -1,6 +1,9 @@
 import * as actionTypes from "../actions/actionTypes";
 // @ts-ignore
 import uniqueId from "uuid/v1";
+import getConfig from 'next/config'
+const {publicRuntimeConfig} = getConfig();
+const {API_URL} = publicRuntimeConfig;
 
 const initialState = {};
 
@@ -19,7 +22,7 @@ const createReminder = (prevState: any, action: any) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(reminder)
   };
-  fetch('https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/', requestOptions)
+  fetch(API_URL, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();
@@ -67,7 +70,7 @@ const updateReminder = (prevState: any, action: any) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedReminder)
   };
-  fetch(`https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/${updatedReminder._id}`, requestOptions)
+  fetch(`${API_URL}/${updatedReminder._id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();
@@ -99,7 +102,7 @@ const deleteReminder = (prevState: any, action: any) => {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
   };
-  fetch(`https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/${updatedReminder._id}`, requestOptions)
+  fetch(`${API_URL}/${updatedReminder._id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();

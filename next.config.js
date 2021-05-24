@@ -1,6 +1,6 @@
 
 module.exports = {
     publicRuntimeConfig: {
-        API_URL: 'https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules'
+        API_URL: 'https://d19igrjubk.execute-api.us-east-1.amazonaws.com/dev/schedules'
     }
 }

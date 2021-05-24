@@ -100,7 +100,7 @@ const deleteReminder = (prevState: any, action: any) => {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
   };
-  fetch(`${API_URL}/${updatedReminder._id}`, requestOptions)
+  fetch(`${API_URL}/${updatedReminder.id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();

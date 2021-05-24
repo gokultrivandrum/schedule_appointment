@@ -32,3 +32,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Serverless directories
+.serverless
+.serverless_nextjs
+
+
+# secrets
+secrets.json
+
+# config
+.vscode

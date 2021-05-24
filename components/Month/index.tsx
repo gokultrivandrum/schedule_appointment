@@ -60,7 +60,7 @@ const Month = ({ setReminderArrayStore }: Props) => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       };
-      fetch('http://localhost:3005/schedules/', requestOptions)
+      fetch('https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/', requestOptions)
         .then(async (response: any) => {
           const isJson = response.headers.get('content-type').includes('application/json');
           const data = isJson && await response.json();

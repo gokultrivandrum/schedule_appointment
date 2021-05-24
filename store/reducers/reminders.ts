@@ -19,7 +19,7 @@ const createReminder = (prevState: any, action: any) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(reminder)
   };
-  fetch('http://localhost:3005/schedules/', requestOptions)
+  fetch('https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/', requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();
@@ -67,7 +67,7 @@ const updateReminder = (prevState: any, action: any) => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedReminder)
   };
-  fetch(`http://localhost:3005/schedules/${updatedReminder._id}`, requestOptions)
+  fetch(`https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/${updatedReminder._id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();
@@ -99,7 +99,7 @@ const deleteReminder = (prevState: any, action: any) => {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' }
   };
-  fetch(`http://localhost:3005/schedules/${updatedReminder._id}`, requestOptions)
+  fetch(`https://evobtoyhw5.execute-api.us-east-1.amazonaws.com/dev/schedules/${updatedReminder._id}`, requestOptions)
     .then(async (response: any) => {
       const isJson = response.headers.get('content-type').includes('application/json');
       const data = isJson && await response.json();
